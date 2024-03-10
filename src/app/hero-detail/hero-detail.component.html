@@ -1,0 +1,12 @@
+<!-- The hero details should only be displayed when a hero is selected. When a component is created initially, there is no selected hero. Import the NgIf directive in your component (similar to NgFor) and add the *ngIf directive to the <div> that wraps the hero details. This directive tells Angular to render the section only when the selectedHero is defined after it has been selected by clicking on a hero. -->
+
+<div *ngIf="hero">
+  <h2>{{ hero.name | uppercase }} Details</h2>
+  <div><span>id: </span>{{ hero.id }}</div>
+  <div>
+    <label for="hero-name">Hero name: </label>
+    <input id="hero-name" [(ngModel)]="hero.name" placeholder="name" />
+  </div>
+  <button type="button" (click)="goBack()">go back</button>
+  <button type="button" (click)="save()">save</button>
+</div>
